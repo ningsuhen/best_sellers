@@ -1,6 +1,5 @@
-<h1>Editing daily_purchase</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @daily_purchase %> |
-<%= link_to 'Back', daily_purchases_path %>
+<%- model_class = DailyPurchase -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => DailyPurchase %></h1>
+</div>
+<%= render :partial => 'form' %>

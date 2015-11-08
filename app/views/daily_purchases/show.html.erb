@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = DailyPurchase -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => DailyPurchase %></h1>
+</div>
 
-<p>
-  <strong>Listing:</strong>
-  <%= @daily_purchase.listing %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:day) %></dt>
+      <dd><pre class="prettyprint"><%= @daily_purchase.day %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Day:</strong>
-  <%= @daily_purchase.day %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              daily_purchases_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_daily_purchase_path(@daily_purchase), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              daily_purchase_path(@daily_purchase),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_daily_purchase_path(@daily_purchase) %> |
-<%= link_to 'Back', daily_purchases_path %>
