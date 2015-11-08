@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Listing:</strong>
+  <%= @daily_purchase.listing %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @daily_purchase.day %>
+</p>
+
+<%= link_to 'Edit', edit_daily_purchase_path(@daily_purchase) %> |
+<%= link_to 'Back', daily_purchases_path %>
